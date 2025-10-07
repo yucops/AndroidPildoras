@@ -19,6 +19,7 @@ class MainActivity : ComponentActivity() {
         setContent {
 
             miBotonComponente()
+            miBotonComponente2()
 
         }
     }
@@ -27,12 +28,25 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun miBotonComponente() {
 
-    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.CenterStart) {
 
         val context = LocalContext.current
 
         Button(onClick = {
             Toast.makeText(context, "Has presionado el boton", Toast.LENGTH_SHORT).show()
         }) { Text("Presiona aqui") }
+    }
+}
+
+@Composable
+fun miBotonComponente2() {
+
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.CenterEnd) {
+
+        val context = LocalContext.current
+
+        Button(onClick = {
+            Toast.makeText(context, "Has presionado el boton 2", Toast.LENGTH_SHORT).show()
+        }) { Text("Presiona aqui 2") }
     }
 }
